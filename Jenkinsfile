@@ -12,6 +12,7 @@ pipeline {
         stage('Contents'){
             steps{
                 sh 'ls -la'
+                echo 'Building'
             }
         }
     }
