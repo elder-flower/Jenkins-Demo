@@ -9,13 +9,6 @@ pipeline {
         )
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'git@github.com:elder-flower/Jenkins-Demo.git',
-                    credentialsId: 'github-ssh-key',
-                    branch: 'main'
-            }
-        }
         stage('Contents'){
             steps{
                 sh 'ls -la'
