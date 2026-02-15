@@ -9,11 +9,18 @@ pipeline {
         )
     }
     stages {
-        stage('Contents'){
+        stage('Build'){
             steps{
                 sh 'ls -la'
                 echo 'Building'
             }
+        }
+    }
+    stage('Deploy to S3') {
+        steps {
+            sh '''
+                aws s3 cp index.html s3://my-test-bucket-jenkins-deploy/index.html
+            '''
         }
     }
 }
